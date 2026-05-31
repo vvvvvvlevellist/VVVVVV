@@ -1,0 +1,17 @@
+{
+  "id": "333333-easy-mode",
+  "name": "Dimension 333333 (Easy Mode)",
+  "author": "Sendy",
+  "creators": [],
+  "verifier": "Sendy",
+  "verification": "https://www.youtube.com/watch?v=d-h43uYNvo8",
+  "percentToQualify": 100,
+  "records": [
+        {
+            "user": "MythicalWrath",
+            "link": "https://www.youtube.com/watch?v=XIMLoLxmTDw",
+            "percent": 100,
+            "hz": 60
+        }
+  ]
+}

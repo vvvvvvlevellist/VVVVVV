@@ -1,0 +1,17 @@
+{
+  "id": "variation-venture",
+  "name": "Variation Venture",
+  "author": "Craig Forrester",
+  "creators": [],
+  "verifier": "Craig Forrester",
+  "verification": "https://www.youtube.com/watch?v=d-h43uYNvo8",
+  "percentToQualify": 100,
+  "records": [
+        {
+            "user": "MythicalWrath",
+            "link": "https://www.youtube.com/watch?v=XIMLoLxmTDw",
+            "percent": 100,
+            "hz": 60
+        }
+  ]
+}
