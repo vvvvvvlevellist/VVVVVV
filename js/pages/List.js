@@ -51,8 +51,8 @@ export default {
                             <p>{{ level.tier }}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Password</div>
-                            <p>{{ level.password || 'Free to Copy' }}</p>
+                            <div class="type-title-sm">Download</div>
+                            <p>{{ level.download }}</p>
                         </li>
                     </ul>
                     <h2>Records</h2>
