@@ -97,7 +97,11 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Completed the level legitimately, without use of invincibility, speedhack, macros, or any external cheating tools
+                        Submission rules will likely change as the list is formed, any updates will be posted in ⁠🗞️-submission-changes 
+                        The level must be completed without any game-changing accessibility settings (specifically invincibility and speed change), and no external macros or other hacking tools can be used
+                        The level must be beaten on the most recent version without the use of bugs or secret ways (old versions of the game may be used but are not recommended)
+                        All submissions require screenshot proof, with levels in the top 10 requiring video footage of each checkpoint (in the near future the requirements will be raised and click audio may be required)
+                        Submit records in ⁠🥇-record-submissions and verified levels in ⁠⏺️-level-submissions
                     </p>
                         <div class="og">
                     <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
