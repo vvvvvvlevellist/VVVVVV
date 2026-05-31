@@ -109,11 +109,6 @@ export default {
                     <p>
                         Submit records in ⁠🥇-record-submissions and verified levels in ⁠⏺️-level-submissions
                     <p>
-                    <p>
-                    <p>
-                    <p>
-                    <p>
-                    <p>
                     </div>
                         <div class="og">
                     <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
