@@ -50,10 +50,12 @@ export default {
                             <div class="type-title-sm">Tier</div>
                             <p>{{ level.tier }}</p>
                         </li>
-                        <li>
-                            <div class="type-title-sm">Download</div>
-                            <a :href="level.download" target="_blank">Download Link</a>
-                        </li>
+                            <li>
+                                <div class="type-title-sm">Download</div>
+                                <a :href="level.download" target="_blank" class="type-label-lg">
+                                    Download Link
+                                </a>
+                            </li>
                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 75"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
@@ -96,17 +98,18 @@ export default {
                         </ol>
                     </template>
                     <h3>Submission Requirements</h3>
-                    <p>
+                    </div>
                         Submission rules will likely change as the list is formed, any updates will be posted in ⁠🗞️-submission-changes 
-                    <p>
+                    </div>
                         The level must be completed without any game-changing accessibility settings (specifically invincibility and speed change), and no external macros or other hacking tools can be used
-                    <p>
+                    </div>
                         The level must be beaten on the most recent version without the use of bugs or secret ways (old versions of the game may be used but are not recommended)
-                    <p>
+                    </div>
                         All submissions require screenshot proof, with levels in the top 10 requiring video footage of each checkpoint (in the near future the requirements will be raised and click audio may be required)
-                    <p>
+                    </div>
                         Submit records in ⁠🥇-record-submissions and verified levels in ⁠⏺️-level-submissions
-                    </p>
+                    </div>
+                    </div>
                         <div class="og">
                     <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
                 </div>
