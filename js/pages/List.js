@@ -55,9 +55,6 @@ export default {
                                 <a :href="level.download" target="_blank" class="type-label-lg">
                                     Download Link
                                 </a>
-                                    <span v-else class="type-label-lg">
-                                        Base Game
-                                    </span>
                             </li>
                     </ul>
                     <h2>Records</h2>
