@@ -47,8 +47,8 @@ export default {
                             <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
+                            <div class="type-title-sm">Tier</div>
+                            <p>{{ level.tier }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Password</div>
