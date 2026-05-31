@@ -8,5 +8,10 @@
         "role": "admin",
         "name": "ShadowTracker",
         "link": "https://www.youtube.com/@ShadowTrackerlol"
+    },
+    {
+        "role": "dev",
+        "name": "Hello_Steeeve",
+        "link": "https://www.youtube.com/@hellosteeeve"
     }
 ]
