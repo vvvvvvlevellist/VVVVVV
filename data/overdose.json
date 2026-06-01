@@ -15,6 +15,12 @@
             "link": "https://www.youtube.com/watch?v=XIMLoLxmTDw",
             "percent": 100,
             "hz": 60
+        },
+        {
+            "user": "Hello_Steeeve",
+            "link": "https://drive.google.com/file/d/1a2X5n_Hkxot8LGZlbpwYRUe6UBtcieRm/view?usp=drivesdk",
+            "percent": 100,
+            "hz": 75
         }
   ]
 }
