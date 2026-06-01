@@ -99,9 +99,9 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Submission rules will likely change as the list is formed, any updates will be posted in ⁠🗞️-submission-changes 
+                        Full list of rules in the discord
                     <p>
-                        The level must be completed without any game-changing accessibility settings (specifically invincibility and speed change), and no external macros or other hacking tools can be used
+                        The level must be completed without any game-changing accessibility settings and external hacks can be used
                     <p>
                         The level must be beaten on the most recent version without the use of bugs or secret ways (old versions of the game may be used but are not recommended)
                     <p>
