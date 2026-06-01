@@ -3,7 +3,7 @@
   "name": "The view from here",
   "author": "INSANEthing",
   "creators": [],
-  "verifier": "~lily",
+  "verifier": "lily~",
   "verification": "pending",
   "percentToQualify": 100,
   "download": "https://vsix.dev/level/tvfh",
