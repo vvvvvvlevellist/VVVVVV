@@ -99,15 +99,7 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Full list of rules in the discord
-                    <p>
-                        The level must be completed without any game-changing accessibility settings and external hacks can be used
-                    <p>
-                        The level must be beaten on the most recent version without the use of bugs or secret ways (old versions of the game may be used but are not recommended)
-                    <p>
-                        All submissions require screenshot proof, with levels in the top 10 requiring video footage of each checkpoint (in the near future the requirements will be raised and click audio may be required)
-                    <p>
-                        Submit records in ⁠🥇-record-submissions and verified levels in ⁠⏺️-level-submissions
+                        Full list of rules and submissions in the discord!!! The level must be completed without any game-changing accessibility settings and external hacks, or bugs/secret ways being used. All levels require a form of proof, with more exact details on this in the discord.
                     <p>
                     </div>
                         <div class="og">
