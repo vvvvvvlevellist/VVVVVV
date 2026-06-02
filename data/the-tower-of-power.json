@@ -6,5 +6,12 @@
   "verifier": "randomnine",
   "verification": "https://www.youtube.com/watch?v=d-h43uYNvo8",
   "percentToQualify": 100,
-  "records": []
+  "records": [
+        {
+            "user": "MythicalWrath",
+            "link": "https://drive.google.com/file/d/1ESoWLZhXNlj1oM4eVOaufvR6-T2O1IGF/view?usp=sharing",
+            "percent": 100,
+            "hz": 60
+        }  
+  ]
 }
