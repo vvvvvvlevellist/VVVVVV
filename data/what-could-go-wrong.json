@@ -7,5 +7,12 @@
   "verification": "needs showcase",
   "percentToQualify": 100,
   "download": "https://vsix.dev/level/wcgw",
-  "records": []
+  "records": [
+        {
+            "user": "Hello_Steeeve",
+            "link": "https://drive.google.com/file/d/1dBb-LkzFhUs8wvfGa4g5waN81FX7FT9f/view",
+            "percent": 100,
+            "hz": 75
+        }
+  ]
 }
