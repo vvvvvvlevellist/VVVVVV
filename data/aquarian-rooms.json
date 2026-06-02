@@ -8,5 +8,11 @@
     "percentToQualify": 100,
     "download": "https://vsix.dev/level/aquarian_rooms",
     "records": [
+      {
+            "user": "Hello_Steeeve",
+            "link": "https://drive.google.com/file/d/1lFylURgLQNn2xfLtmdjIfFMTpyB0eTId/view",
+            "percent": 100,
+            "hz": 75
+        }
     ]
 }
