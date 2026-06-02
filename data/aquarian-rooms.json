@@ -1,0 +1,12 @@
+{
+  "tier": "Pending",
+    "name": "Aquarian",
+    "author": "Chir",
+    "creators": [],
+    "verifier": "Chir",
+    "verification": "pending",
+    "percentToQualify": 100,
+    "download": "https://vsix.dev/level/aquarian_rooms",
+    "records": [
+    ]
+}
