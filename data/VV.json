@@ -5,7 +5,7 @@
   "creators": [],
   "verifier": "starbox",
   "verification": "needs showcase",
-  "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
   "download": "https://vsix.dev/level/starbox614_vv_level",
   "records": [
         {

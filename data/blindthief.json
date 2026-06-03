@@ -7,7 +7,7 @@
     ],
     "verifier": "mothbeanie",
     "verification": "pending",
-    "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
     "download": "https://vsix.dev/level/blingthief",
     "records": [
     ]

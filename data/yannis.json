@@ -5,7 +5,7 @@
   "creators": [],
   "verifier": "Dynaboom4",
   "verification": "needs showcase",
-  "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
   "download": "https://vsix.dev/level/yannis",
   "records": []
 }

@@ -5,7 +5,7 @@
     "creators": [],
     "verifier": "livinginastateofzen",
     "verification": "pending",
-    "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
     "download": "https://vsix.dev/level/back_to_the_ship/versions",
     "records": [
     ]

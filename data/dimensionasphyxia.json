@@ -5,7 +5,7 @@
     "creators": [],
     "verifier": "Chir",
     "verification": "pending",
-    "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
     "download": "https://vsix.dev/level/dimensionasphyxia/versions",
     "records": []
 }

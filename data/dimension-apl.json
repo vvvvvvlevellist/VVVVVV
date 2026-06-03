@@ -5,7 +5,7 @@
     "creators": [],
     "verifier": "Baskooot",
     "verification": "pending",
-    "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
     "download": "https://vsix.dev/level/dapl",
     "records": [
         {

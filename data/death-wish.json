@@ -5,7 +5,7 @@
     "creators": [],
     "verifier": "lily~",
     "verification": "findthis",
-    "percentToQualify": "Video",
+  "percentToQualify": 100,
     "download": "https://vsix.dev/level/deathnote",
     "records": []
 }

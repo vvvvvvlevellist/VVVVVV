@@ -5,7 +5,7 @@
     "creators": [],
     "verifier": "INSANEthing",
     "verification": "findthis",
-    "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
     "download": "https://vsix.dev/level/every_end",
     "records": []
 }

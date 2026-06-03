@@ -5,7 +5,7 @@
   "creators": [],
   "verifier": "lily~",
   "verification": "https://youtu.be/d22JRVdIk1E",
-  "percentToQualify": "Video",
+  "percentToQualify": 100,
   "download": "https://vsix.dev/level/tvfh",
   "records": []
 }
