@@ -7,7 +7,7 @@
   ],
   "verifier": "mothbeanie",
   "verification": "needs showcase",
-  "percentToQualify": 100,
+  "percentToQualify": "Screenshot",
   "download": "https://vsix.dev/level/t4hc",
   "records": []
 }

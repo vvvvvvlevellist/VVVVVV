@@ -5,7 +5,7 @@
   "creators": [],
   "verifier": "lily~",
   "verification": "pending",
-  "percentToQualify": 100,
+  "percentToQualify": "Video",
   "download": "https://vsix.dev/level/k3",
   "records": []
 }
