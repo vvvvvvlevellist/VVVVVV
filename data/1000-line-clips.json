@@ -5,7 +5,7 @@
   "creators": [],
   "verifier": "AlphaBetaFullRelease",
   "verification": "https://youtu.be/d6azjsEnrG8?si=OcgocLla4gh3xTXE",
-  "percentToQualify": "Screenshot",
+  "percentToQualify": 100,
   "download": "https://vsix.dev/level/1000_line_clips",
   "records": []
 }
