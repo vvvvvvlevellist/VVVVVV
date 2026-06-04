@@ -9,5 +9,12 @@
   "verification": "needs showcase",
   "percentToQualify": 100,
   "download": "https://vsix.dev/level/t4hc",
-  "records": []
+  "records": [
+        {
+            "user": "Hello_Steeeve",
+            "link": "https://drive.google.com/file/d/1xRKBAwiwJsT6_p5CX99nDejh0C8HdzTs/view?usp=drive_link",
+            "percent": 100,
+            "hz": 75
+        }
+  ]
 }
