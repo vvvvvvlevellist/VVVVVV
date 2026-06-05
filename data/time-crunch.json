@@ -1,0 +1,13 @@
+{
+  "tier": "Medium",
+  "name": "Time Crunch",
+  "author": "Tart",
+  "creators": [
+    "Elomavi, Tart"
+  ],
+  "verifier": "Tart",
+  "verification": "pending",
+  "percentToQualify": 100,
+  "download": "https://vsix.dev/level/timecrunch",
+  "records": []
+}
