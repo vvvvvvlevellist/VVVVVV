@@ -52,9 +52,10 @@ export default {
                         </li>
                             <li>
                                 <div class="type-title-sm">Download</div>
-                                <a :href="level.download" target="_blank" class="type-label-lg">
+                                <a v-if="level.download !== 'Base Game'" :href="level.download" target="_blank" class="type-label-lg">
                                     Download Link
                                 </a>
+                                <span v-else class="type-label-lg">Base Game</span>
                             </li>
                     </ul>
                     <h2>Records</h2>
@@ -98,7 +99,7 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Full list of rules and submissions in the discord!!! The level must be completed without any game-changing accessibility settings and external hacks, or bugs/secret ways being used. All levels require a form of proof, with more exact details on this in the discord.
+                        Full list of rules and submissions in the discord!!! The level must be completed without any game-changing accessibility settings and external hacks, or bugs/secret ways b[...]
                     <p>
                     </div>
                 </div>
