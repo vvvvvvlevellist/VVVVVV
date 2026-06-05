@@ -186,6 +186,8 @@ export async function fetchLeaderboard() {
 
                     link: record.link,
 
+                    isLegacy: rank + 1 > 50,  // Add this line
+
                 });
 
                 return;
@@ -205,6 +207,8 @@ export async function fetchLeaderboard() {
                 score: score(rank + 1, record.percent, level.percentToQualify),
 
                 link: record.link,
+
+                isLegacy: rank + 1 > 50,  // Add this line
 
             });
 
