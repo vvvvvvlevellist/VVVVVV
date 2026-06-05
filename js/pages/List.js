@@ -101,8 +101,6 @@ export default {
                         Full list of rules and submissions in the discord!!! The level must be completed without any game-changing accessibility settings and external hacks, or bugs/secret ways being used. All levels require a form of proof, with more exact details on this in the discord.
                     <p>
                     </div>
-                        <div class="og">
-                    <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
                 </div>
             </div>
         </main>

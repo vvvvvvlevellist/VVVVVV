@@ -1,0 +1,7 @@
+.page-legacy {
+    /* Inherits from list.css styling */
+}
+
+.page-legacy .list .rank p {
+    /* Legacy levels display with rank numbering from 51+ */
+}

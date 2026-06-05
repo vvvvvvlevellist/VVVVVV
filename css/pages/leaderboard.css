@@ -91,3 +91,17 @@
 .page-leaderboard .player .table a:hover {
     text-decoration: underline;
 }
+
+.page-leaderboard .player .table tr.legacy td {
+    opacity: 0.7;
+}
+
+.page-leaderboard .player .table .legacy-text {
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+.page-leaderboard .player .table tr.legacy .rank p,
+.page-leaderboard .player .table tr.legacy .score p {
+    font-size: 0.9em;
+}

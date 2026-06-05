@@ -146,6 +146,8 @@ export async function fetchLeaderboard() {
 
             link: level.verification,
 
+            isLegacy: rank + 1 > 50,  // Flag legacy levels
+
         });
 
 
