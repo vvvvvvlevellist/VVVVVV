@@ -25,7 +25,7 @@ export default {
                 <table class="list" v-if="legacyList">
                     <tr v-for="([level, err], i) in legacyList">
                         <td class="rank">
-                            <p class="type-label-sm type-legacy-rank">Legacy {{ i + 1 }}</p>
+                            <p class="type-label-sm type-legacy-rank">Legacy</p>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
