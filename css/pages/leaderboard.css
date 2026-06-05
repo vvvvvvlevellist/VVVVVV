@@ -105,3 +105,19 @@
 .page-leaderboard .player .table tr.legacy .score p {
     font-size: 0.9em;
 }
+
+.page-leaderboard .player .table tr.legacy td {
+    opacity: 0.7;
+}
+
+.page-leaderboard .player .table tr.legacy .rank p {
+    font-size: 0.85em;
+}
+
+.page-leaderboard .player .table tr.legacy .level a {
+    font-size: 0.85em;
+}
+
+.page-leaderboard .player .table tr.legacy .score p {
+    font-size: 0.85em;
+}

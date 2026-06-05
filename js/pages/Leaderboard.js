@@ -45,9 +45,38 @@ export default {
                     <div class="player">
                         <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
                         <h3>{{ entry.total }}</h3>
-                            <h2 v-if="entry.verified.length > 0">Verified ({{ entry.verified.length}})</h2>
+                            <h2 v-if="entry.verified.filter(s => !s.isLegacy).length > 0">Verified ({{ entry.verified.filter(s => !s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.verified" :class="{ 'legacy': score.isLegacy }">
+                                <tr v-for="score in entry.verified.filter(s => !s.isLegacy)">
+                                    <td class="rank">
+                                        <p>#{{ score.rank }}</p>
+                                    </td>
+                                    <td class="level">
+                                        <a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a>
+                                    </td>
+                                    <td class="score">
+                                        <p>+{{ localize(score.score) }}</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <h2 v-if="entry.verified.filter(s => s.isLegacy).length > 0">Legacy Verified ({{ entry.verified.filter(s => s.isLegacy).length }})</h2>
+                            <table class="table">
+                                <tr v-for="score in entry.verified.filter(s => s.isLegacy)" class="legacy">
+                                    <td class="rank">
+                                        <p>#{{ score.rank }}</p>
+                                    </td>
+                                    <td class="level">
+                                        <a class="type-label-sm" target="_blank" :href="score.link">{{ score.level }}</a>
+                                    </td>
+                                    <td class="score">
+                                        <p>-</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        <h2 v-if="entry.completed.filter(s => !s.isLegacy).length > 0">Completed ({{ entry.completed.filter(s => !s.isLegacy).length }})</h2>
+                        <table class="table">
+                            <tr v-for="score in entry.completed.filter(s => !s.isLegacy)">
                                 <td class="rank">
                                     <p>#{{ score.rank }}</p>
                                 </td>
@@ -59,23 +88,24 @@ export default {
                                 </td>
                             </tr>
                         </table>
-                        <h2 v-if="entry.completed.length > 0">Completed ({{ entry.completed.length }})</h2>
+
+                        <h2 v-if="entry.completed.filter(s => s.isLegacy).length > 0">Legacy Completed ({{ entry.completed.filter(s => s.isLegacy).length }})</h2>
                         <table class="table">
-                            <tr v-for="score in entry.completed">
+                            <tr v-for="score in entry.completed.filter(s => s.isLegacy)" class="legacy">
                                 <td class="rank">
                                     <p>#{{ score.rank }}</p>
                                 </td>
                                 <td class="level">
-                                    <a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a>
+                                    <a class="type-label-sm" target="_blank" :href="score.link">{{ score.level }}</a>
                                 </td>
                                 <td class="score">
-                                    <p>+{{ localize(score.score) }}</p>
+                                    <p>-</p>
                                 </td>
                             </tr>
                         </table>
-                        <h2 v-if="entry.progressed.length > 0">Progressed ({{entry.progressed.length}})</h2>
+                        <h2 v-if="entry.progressed.filter(s => !s.isLegacy).length > 0">Progressed ({{ entry.progressed.filter(s => !s.isLegacy).length }})</h2>
                         <table class="table">
-                            <tr v-for="score in entry.progressed">
+                            <tr v-for="score in entry.progressed.filter(s => !s.isLegacy)">
                                 <td class="rank">
                                     <p>#{{ score.rank }}</p>
                                 </td>
@@ -84,6 +114,21 @@ export default {
                                 </td>
                                 <td class="score">
                                     <p>+{{ localize(score.score) }}</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h2 v-if="entry.progressed.filter(s => s.isLegacy).length > 0">Legacy Progressed ({{ entry.progressed.filter(s => s.isLegacy).length }})</h2>
+                        <table class="table">
+                            <tr v-for="score in entry.progressed.filter(s => s.isLegacy)" class="legacy">
+                                <td class="rank">
+                                    <p>#{{ score.rank }}</p>
+                                </td>
+                                <td class="level">
+                                    <a class="type-label-sm" target="_blank" :href="score.link">{{ score.percent }}% {{ score.level }}</a>
+                                </td>
+                                <td class="score">
+                                    <p>-</p>
                                 </td>
                             </tr>
                         </table>
