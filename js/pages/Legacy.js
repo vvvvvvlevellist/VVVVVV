@@ -58,7 +58,7 @@ export default {
                         </li>
                     </ul>
                     <h2>Records</h2>
-                    <p>This is a legacy level and does not accept new records.</p>
+                    <p>This is a legacy level and does not accept new records</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="user">
