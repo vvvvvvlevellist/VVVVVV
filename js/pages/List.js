@@ -96,7 +96,7 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Full list of rules and submissions in the discord!!! The level must be completed without any game-changing accessibility settings and external hacks, or bugs/secret ways b[...]
+                        Full list of rules and submissions in the discord!!!
                     <p>
                     </div>
                 </div>
