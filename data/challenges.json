@@ -1,0 +1,12 @@
+{
+  "tier": "Easy",
+    "name": "Challenges",
+    "author": "dot.tiff",
+    "creators": [],
+    "verifier": "dot.tiff",
+    "verification": "pending",
+  "percentToQualify": 100,
+    "download": "https://vsix.dev/level/challenges",
+    "records": [
+    ]
+}
