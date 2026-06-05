@@ -51,9 +51,10 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">Download</div>
-                            <a :href="level.download" target="_blank" class="type-label-lg">
+                            <a v-if="level.download !== 'Base Game'" :href="level.download" target="_blank" class="type-label-lg">
                                 Download Link
                             </a>
+                            <span v-else class="type-label-lg">Base Game</span>
                         </li>
                     </ul>
                     <h2>Records</h2>
