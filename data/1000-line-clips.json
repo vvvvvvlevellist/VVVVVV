@@ -7,5 +7,12 @@
   "verification": "https://youtu.be/d6azjsEnrG8?si=OcgocLla4gh3xTXE",
   "percentToQualify": 100,
   "download": "https://vsix.dev/level/1000_line_clips",
-  "records": []
+  "records": [
+        {
+            "user": "Hello_Steeeve",
+            "link": "https://drive.google.com/file/d/1br9AWK_4I3D-fG9IGRwkzkTUlc5pqUEZ/view",
+            "percent": 100,
+            "hz": 75
+        }
+  ]
 }
