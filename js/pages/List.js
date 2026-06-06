@@ -22,8 +22,16 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
+                <div class="search-bar">
+                    <input 
+                        v-model="searchQuery" 
+                        type="text" 
+                        placeholder="Search levels..."
+                        class="search-input"
+                    />
+                </div>
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list.slice(0, 50)">
+                    <tr v-for="([level, err], i) in filteredList" :key="i">
                         <td class="rank">
                             <p v-if="i + 1 <= 50" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
@@ -35,6 +43,9 @@ export default {
                         </td>
                     </tr>
                 </table>
+                <div v-if="filteredList.length === 0 && searchQuery" class="no-results">
+                    <p>No levels found matching "{{ searchQuery }}"</p>
+                </div>
             </div>
             <div class="level-container">
                 <div class="level" v-if="level">
@@ -109,6 +120,7 @@ export default {
         loading: true,
         selected: 0,
         errors: [],
+        searchQuery: "",
         roleIconMap,
         store
     }),
@@ -126,6 +138,15 @@ export default {
                     ? this.level.showcase
                     : this.level.verification
             );
+        },
+        filteredList() {
+            if (!this.searchQuery.trim()) {
+                return this.list.slice(0, 50);
+            }
+            const query = this.searchQuery.toLowerCase();
+            return this.list.slice(0, 50).filter(([level]) => {
+                return level && level.name.toLowerCase().includes(query);
+            });
         },
     },
     async mounted() {
