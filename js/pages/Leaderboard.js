@@ -55,11 +55,11 @@ export default {
                 </div>
                 <div class="player-container">
                     <div class="player" v-if="entry">
-                        <h1>#{{ selected + 1 }} {{ entry.user.user }}</h1>
-                        <h3>{{ entry.user.total }}</h3>
-                            <h2 v-if="entry.user.verified.filter(s => !s.isLegacy).length > 0">Verified ({{ entry.user.verified.filter(s => !s.isLegacy).length }})</h2>
+                        <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
+                        <h3>{{ localize(entry.total) }}</h3>
+                            <h2 v-if="entry.verified.filter(s => !s.isLegacy).length > 0">Verified ({{ entry.verified.filter(s => !s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.user.verified.filter(s => !s.isLegacy)">
+                                <tr v-for="score in entry.verified.filter(s => !s.isLegacy)">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -71,9 +71,9 @@ export default {
                                     </td>
                                 </tr>
                             </table>
-                            <h2 v-if="entry.user.completed.filter(s => !s.isLegacy).length > 0">Completed ({{ entry.user.completed.filter(s => !s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.completed.filter(s => !s.isLegacy).length > 0">Completed ({{ entry.completed.filter(s => !s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.user.completed.filter(s => !s.isLegacy)">
+                                <tr v-for="score in entry.completed.filter(s => !s.isLegacy)">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -86,9 +86,9 @@ export default {
                                 </tr>
                             </table>
 
-                            <h2 v-if="entry.user.completed.filter(s => s.isLegacy).length > 0">Legacy Completed ({{ entry.user.completed.filter(s => s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.completed.filter(s => s.isLegacy).length > 0">Legacy Completed ({{ entry.completed.filter(s => s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.user.completed.filter(s => s.isLegacy)" class="legacy">
+                                <tr v-for="score in entry.completed.filter(s => s.isLegacy)" class="legacy">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -101,9 +101,9 @@ export default {
                                 </tr>
                             </table>
 
-                            <h2 v-if="entry.user.progressed.filter(s => !s.isLegacy).length > 0">Progressed ({{ entry.user.progressed.filter(s => !s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.progressed.filter(s => !s.isLegacy).length > 0">Progressed ({{ entry.progressed.filter(s => !s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.user.progressed.filter(s => !s.isLegacy)">
+                                <tr v-for="score in entry.progressed.filter(s => !s.isLegacy)">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -116,9 +116,9 @@ export default {
                                 </tr>
                             </table>
 
-                            <h2 v-if="entry.user.progressed.filter(s => s.isLegacy).length > 0">Legacy Progressed ({{ entry.user.progressed.filter(s => s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.progressed.filter(s => s.isLegacy).length > 0">Legacy Progressed ({{ entry.progressed.filter(s => s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.user.progressed.filter(s => s.isLegacy)" class="legacy">
+                                <tr v-for="score in entry.progressed.filter(s => s.isLegacy)" class="legacy">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -137,7 +137,7 @@ export default {
     `,
     computed: {
         entry() {
-            return this.filteredLeaderboard[0];
+            return this.leaderboard[this.selected];
         },
         filteredLeaderboard() {
             if (!this.searchQuery.trim()) {
