@@ -31,14 +31,14 @@ export default {
                     />
                 </div>
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in filteredList" :key="i">
+                    <tr v-for="entry in filteredList" :key="entry.index">
                         <td class="rank">
-                            <p v-if="i + 1 <= 50" class="type-label-lg">#{{ i + 1 }}</p>
+                            <p v-if="entry.index + 1 <= 50" class="type-label-lg">#{{ entry.index + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
                         </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                            <button @click="selected = i">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                        <td class="level" :class="{ 'active': selected == entry.index, 'error': !entry.level }">
+                            <button @click="selected = entry.index">
+                                <span class="type-label-lg">{{ entry.level?.name || \`Error (\${entry.err}.json)\` }}</span>
                             </button>
                         </td>
                     </tr>
@@ -141,12 +141,21 @@ export default {
         },
         filteredList() {
             if (!this.searchQuery.trim()) {
-                return this.list.slice(0, 50);
+                return this.list.slice(0, 50).map(([level, err], index) => ({
+                    level,
+                    err,
+                    index
+                }));
             }
             const query = this.searchQuery.toLowerCase();
-            return this.list.slice(0, 50).filter(([level]) => {
-                return level && level.name.toLowerCase().includes(query);
-            });
+            return this.list
+                .slice(0, 50)
+                .map(([level, err], index) => ({
+                    level,
+                    err,
+                    index
+                }))
+                .filter(entry => entry.level && entry.level.name.toLowerCase().includes(query));
         },
     },
     async mounted() {
