@@ -12,6 +12,7 @@ export default {
         loading: true,
         selected: 0,
         err: [],
+        searchQuery: "",
     }),
     template: `
         <main v-if="loading">
@@ -25,8 +26,16 @@ export default {
                     </p>
                 </div>
                 <div class="board-container">
+                    <div class="search-bar">
+                        <input 
+                            v-model="searchQuery" 
+                            type="text" 
+                            placeholder="Search players..."
+                            class="search-input"
+                        />
+                    </div>
                     <table class="board">
-                        <tr v-for="(ientry, i) in leaderboard">
+                        <tr v-for="(ientry, i) in filteredLeaderboard" :key="i">
                             <td class="rank">
                                 <p class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
@@ -40,6 +49,9 @@ export default {
                             </td>
                         </tr>
                     </table>
+                    <div v-if="filteredLeaderboard.length === 0 && searchQuery" class="no-results">
+                        <p>No players found matching "{{ searchQuery }}"</p>
+                    </div>
                 </div>
                 <div class="player-container">
                     <div class="player">
@@ -125,7 +137,16 @@ export default {
     `,
     computed: {
         entry() {
-            return this.leaderboard[this.selected];
+            return this.filteredLeaderboard[this.selected];
+        },
+        filteredLeaderboard() {
+            if (!this.searchQuery.trim()) {
+                return this.leaderboard;
+            }
+            const query = this.searchQuery.toLowerCase();
+            return this.leaderboard.filter(entry => 
+                entry.user.toLowerCase().includes(query)
+            );
         },
     },
     async mounted() {
