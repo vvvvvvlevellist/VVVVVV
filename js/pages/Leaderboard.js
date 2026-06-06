@@ -35,16 +35,16 @@ export default {
                         />
                     </div>
                     <table class="board">
-                        <tr v-for="(ientry, i) in filteredLeaderboard" :key="i">
+                        <tr v-for="entry in filteredLeaderboard" :key="entry.index">
                             <td class="rank">
-                                <p class="type-label-lg">#{{ i + 1 }}</p>
+                                <p class="type-label-lg">#{{ entry.index + 1 }}</p>
                             </td>
                             <td class="total">
-                                <p class="type-label-lg">{{ localize(ientry.total) }}</p>
+                                <p class="type-label-lg">{{ localize(entry.user.total) }}</p>
                             </td>
-                            <td class="user" :class="{ 'active': selected == i }">
-                                <button @click="selected = i">
-                                    <span class="type-label-lg">{{ ientry.user }}</span>
+                            <td class="user" :class="{ 'active': selected == entry.index }">
+                                <button @click="selected = entry.index">
+                                    <span class="type-label-lg">{{ entry.user.user }}</span>
                                 </button>
                             </td>
                         </tr>
@@ -55,11 +55,11 @@ export default {
                 </div>
                 <div class="player-container">
                     <div class="player" v-if="entry">
-                        <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
-                        <h3>{{ entry.total }}</h3>
-                            <h2 v-if="entry.verified.filter(s => !s.isLegacy).length > 0">Verified ({{ entry.verified.filter(s => !s.isLegacy).length }})</h2>
+                        <h1>#{{ selected + 1 }} {{ entry.user.user }}</h1>
+                        <h3>{{ entry.user.total }}</h3>
+                            <h2 v-if="entry.user.verified.filter(s => !s.isLegacy).length > 0">Verified ({{ entry.user.verified.filter(s => !s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.verified.filter(s => !s.isLegacy)">
+                                <tr v-for="score in entry.user.verified.filter(s => !s.isLegacy)">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -71,9 +71,9 @@ export default {
                                     </td>
                                 </tr>
                             </table>
-                            <h2 v-if="entry.completed.filter(s => !s.isLegacy).length > 0">Completed ({{ entry.completed.filter(s => !s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.user.completed.filter(s => !s.isLegacy).length > 0">Completed ({{ entry.user.completed.filter(s => !s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.completed.filter(s => !s.isLegacy)">
+                                <tr v-for="score in entry.user.completed.filter(s => !s.isLegacy)">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -86,9 +86,9 @@ export default {
                                 </tr>
                             </table>
 
-                            <h2 v-if="entry.completed.filter(s => s.isLegacy).length > 0">Legacy Completed ({{ entry.completed.filter(s => s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.user.completed.filter(s => s.isLegacy).length > 0">Legacy Completed ({{ entry.user.completed.filter(s => s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.completed.filter(s => s.isLegacy)" class="legacy">
+                                <tr v-for="score in entry.user.completed.filter(s => s.isLegacy)" class="legacy">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -101,9 +101,9 @@ export default {
                                 </tr>
                             </table>
 
-                            <h2 v-if="entry.progressed.filter(s => !s.isLegacy).length > 0">Progressed ({{ entry.progressed.filter(s => !s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.user.progressed.filter(s => !s.isLegacy).length > 0">Progressed ({{ entry.user.progressed.filter(s => !s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.progressed.filter(s => !s.isLegacy)">
+                                <tr v-for="score in entry.user.progressed.filter(s => !s.isLegacy)">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -116,9 +116,9 @@ export default {
                                 </tr>
                             </table>
 
-                            <h2 v-if="entry.progressed.filter(s => s.isLegacy).length > 0">Legacy Progressed ({{ entry.progressed.filter(s => s.isLegacy).length }})</h2>
+                            <h2 v-if="entry.user.progressed.filter(s => s.isLegacy).length > 0">Legacy Progressed ({{ entry.user.progressed.filter(s => s.isLegacy).length }})</h2>
                             <table class="table">
-                                <tr v-for="score in entry.progressed.filter(s => s.isLegacy)" class="legacy">
+                                <tr v-for="score in entry.user.progressed.filter(s => s.isLegacy)" class="legacy">
                                     <td class="rank">
                                         <p>#{{ score.rank }}</p>
                                     </td>
@@ -137,16 +137,22 @@ export default {
     `,
     computed: {
         entry() {
-            return this.filteredLeaderboard[this.selected];
+            return this.filteredLeaderboard[0];
         },
         filteredLeaderboard() {
             if (!this.searchQuery.trim()) {
-                return this.leaderboard;
+                return this.leaderboard.map((user, index) => ({
+                    user,
+                    index
+                }));
             }
             const query = this.searchQuery.toLowerCase();
-            return this.leaderboard.filter(entry => 
-                entry.user.toLowerCase().includes(query)
-            );
+            return this.leaderboard
+                .map((user, index) => ({
+                    user,
+                    index
+                }))
+                .filter(entry => entry.user.user.toLowerCase().includes(query));
         },
     },
     watch: {
