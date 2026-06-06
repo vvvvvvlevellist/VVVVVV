@@ -8,5 +8,11 @@
     "percentToQualify": 100,
     "download": "https://distractionware.com/forum/index.php?topic=3166.0",
     "records": [
+        {
+            "user": "MythicalWrath",
+            "link": "https://youtu.be/omZ0CrblqMc",
+            "percent": 100,
+            "hz": 60
+        }   
     ]
 }
