@@ -54,7 +54,7 @@ export default {
                     </div>
                 </div>
                 <div class="player-container">
-                    <div class="player">
+                    <div class="player" v-if="entry">
                         <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
                         <h3>{{ entry.total }}</h3>
                             <h2 v-if="entry.verified.filter(s => !s.isLegacy).length > 0">Verified ({{ entry.verified.filter(s => !s.isLegacy).length }})</h2>
@@ -147,6 +147,12 @@ export default {
             return this.leaderboard.filter(entry => 
                 entry.user.toLowerCase().includes(query)
             );
+        },
+    },
+    watch: {
+        filteredLeaderboard() {
+            // Reset selection when filtered results change
+            this.selected = 0;
         },
     },
     async mounted() {
