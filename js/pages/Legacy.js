@@ -22,8 +22,16 @@ export default {
         </main>
         <main v-else class="page-list page-legacy">
             <div class="list-container">
+                <div class="search-bar">
+                    <input 
+                        v-model="searchQuery" 
+                        type="text" 
+                        placeholder="Search levels..."
+                        class="search-input"
+                    />
+                </div>
                 <table class="list" v-if="legacyList">
-                    <tr v-for="([level, err], i) in legacyList">
+                    <tr v-for="([level, err], i) in filteredLegacyList" :key="i">
                         <td class="rank">
                             <p class="type-label-sm type-legacy-rank">Legacy</p>
                         </td>
@@ -34,6 +42,9 @@ export default {
                         </td>
                     </tr>
                 </table>
+                <div v-if="filteredLegacyList.length === 0 && searchQuery" class="no-results">
+                    <p>No levels found matching "{{ searchQuery }}"</p>
+                </div>
             </div>
             <div class="level-container">
                 <div class="level" v-if="level">
@@ -103,6 +114,7 @@ export default {
         loading: true,
         selected: 0,
         errors: [],
+        searchQuery: "",
         roleIconMap,
         store
     }),
@@ -120,6 +132,15 @@ export default {
                     ? this.level.showcase
                     : this.level.verification
             );
+        },
+        filteredLegacyList() {
+            if (!this.searchQuery.trim()) {
+                return this.legacyList;
+            }
+            const query = this.searchQuery.toLowerCase();
+            return this.legacyList.filter(([level]) => {
+                return level && level.name.toLowerCase().includes(query);
+            });
         },
     },
     async mounted() {
