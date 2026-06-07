@@ -86,6 +86,21 @@ export default {
                                 </tr>
                             </table>
 
+                            <h2 v-if="entry.verified.filter(s => s.isLegacy).length > 0">Legacy Verified ({{ entry.verified.filter(s => s.isLegacy).length }})</h2>
+                            <table class="table">
+                                <tr v-for="score in entry.verified.filter(s => s.isLegacy)" class="legacy">
+                                    <td class="rank">
+                                        <p>#{{ score.rank }}</p>
+                                    </td>
+                                    <td class="level">
+                                        <a class="type-label-sm" target="_blank" :href="score.link">{{ score.level }}</a>
+                                    </td>
+                                    <td class="score">
+                                        <p>✓</p>
+                                    </td>
+                                </tr>
+                            </table>
+
                             <h2 v-if="entry.completed.filter(s => s.isLegacy).length > 0">Legacy Completed ({{ entry.completed.filter(s => s.isLegacy).length }})</h2>
                             <table class="table">
                                 <tr v-for="score in entry.completed.filter(s => s.isLegacy)" class="legacy">
